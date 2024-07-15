@@ -11,19 +11,9 @@ function HomeBox() {
         const { camera } = useThree();
   
   useEffect(() => {
-    camera.position.set(60, 30, 30); // Set the camera position
+    camera.position.set(65, 53, 2); // Set the camera position
     camera.lookAt(0, 0, 0); // Make the camera look at the center of the scene
-    const controls = camera.userData.controls;
-    const handleKeyDown = (event) => {
-      if (event.key === 'p') {
-        console.log(`Camera position: ${camera.position.x}, ${camera.position.y}, ${camera.position.z}`);
-        alert(`Camera position: ${camera.position.x}, ${camera.position.y}, ${camera.position.z}`)
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
+
     
   }, [camera]);
 
@@ -51,11 +41,11 @@ function HomeBox() {
         <CameraControl/>
  
         <OrbitControls />
-       <primitive object={gltf.scene} ref={ref} scale={[5, 5, 5]} />;
+       <primitive object={gltf.scene} ref={ref} scale={[6, 6, 6]} />;
       </Canvas>
       );
     }
-  }, []);
+  }, [gltf]);
 
   return (
     <div className="homebox">

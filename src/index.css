@@ -133,12 +133,13 @@ height: 350px;
 
   width: 100%;
 
+
 ;
  margin-left: 60px;
 
 
 }
-.techBox{
+.techBox,.projectBox{
   width: 100%;
   background-color: #2D2D2D;
   display: flex;
@@ -162,11 +163,12 @@ margin-top: 29px;
 }
 .techholditems{
   max-width: 1300px;
-
 margin: 0%;
 
 }
-.techsubText{
+
+
+  .techsubText{
   max-width: 1200px;
   color: #8B8686;
 font-family: "Poppins", sans-serif;
@@ -174,13 +176,21 @@ font-style: normal;
 font-size: 20px;
 margin: 0%;
 padding-left: 50px;
+
 }
 
-.imgprint{
+.imgprint {
   max-height: 50px;
   max-width: 50px;
   margin: 10px;
   padding: 20px;
+filter: drop-shadow(8px 8px 3px);
+  animation: 3s hoverTechlogo ease infinite;
+}
+
+@keyframes hoverTechlogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
 }
 .row3{
   text-align: center;
@@ -249,14 +259,15 @@ max-width: 290px;
 
 left: 100px;
 z-index: -1;
+filter: drop-shadow(6px 6px 10px);
 }
 
 .c2{
 right:  -270px;
 top: -90px;
-z-index: 100;
+z-index: 1;
 background-color: #585858;
-  
+filter: drop-shadow(6px 6px 10px);
 
 }
 
@@ -266,6 +277,7 @@ display: flex;
 right: 100px;
 background-color: #292828;
 z-index: -5;
+filter: drop-shadow(6px 6px 10px);
   }
  
 .leftBtn{
@@ -281,6 +293,7 @@ z-index: -5;
   align-items: center;
   
   -webkit-user-select: none;
+  filter: drop-shadow(6px 6px 8px);
 }
 
 .righttBtn{
@@ -296,6 +309,7 @@ z-index: -5;
   align-items: center;
   transform: rotate(180deg);
   -webkit-user-select: none;
+  filter: drop-shadow(6px 6px 8px);
 }
 
 .buttton{
@@ -446,6 +460,152 @@ to{    background-color: #585858;
 .carosel-view:nth-child(3){
   background-color: #292828;
 }
+
+.imageProj{
+
+  max-width: 500px;
+  max-height:400px;
+
+  border-radius: 20px;
+margin: 90px;
+object-fit: contain;
+ /* background-image: url('./images/projects/filterapp.png');
+ background-position: center; 
+ background-size: contain; */
+ filter: drop-shadow(6px 6px 20px #5c5a5a);
+}
+
+
+.projectitemshold{
+  max-width: 1300px;
+display: flex;
+margin: 0%;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+
+}
+
+.projectText > p {
+
+  color:#8B8686;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.projectText > h1{
+  color:white;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size: 25px;
+
+} 
+.buttonProject{
+  max-width: 550px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+  margin-bottom: 40px;
+}
+
+.leftProj,.rightProj{
+  height: 60px;
+  width: 200px;
+  background-color: #474747;
+
+color: white;
+font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  border-radius: 20px ;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none;
+
+    filter: drop-shadow(6px 6px 10px black);
+}
+.Globe{
+  max-width: 1300px;
+
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+  
+
+}
+#canvas-earth{
+
+  max-width: 500px;
+  max-height: 450px;
+height: 350px;
+
+  width: 100%;
+
+
+;
+margin: auto;
+margin-top: 90px;
+}
+
+.textGlobe{
+  color: white;
+font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-size: 20px;
+  text-align: center;
+  max-width: 1300px;
+  margin-bottom: 110px;
+}
+.footer-scetion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color:#8B8686;
+  font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-size: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+ 
+}
+.footer-scetion > hr {
+  
+  width: 100%;
+  color:#8B8686;
+  border: 1px solid#8B8686;;
+}
+.logo-footer{
+  display: flex;
+  max-width: 122px;
+  width: 100em;
+  margin-top: 20px;
+  margin-bottom: 5px;
+
+  justify-content: space-between;
+  
+}
+.logoF{
+  height: 35px;
+  width: 35px;
+  filter:drop-shadow(2px 2px 10px  #050505)
+}
+.logoFL{
+  padding-top: 4px;
+  height: 28px;
+  width: 28px;
+  filter:drop-shadow(2px 2px 9px  #050505)
+
+}
+.logoFL:hover,
+.logoF:hover {
+  filter: drop-shadow(2px 2px 9px rgb(228, 225, 225));
+}
+
 @media only screen and (max-width: 1273px){
 #canvas-container{
 margin: 0px;
