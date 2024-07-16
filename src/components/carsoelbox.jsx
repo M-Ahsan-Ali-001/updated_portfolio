@@ -10,7 +10,7 @@ export default function CaroselBox() {
 
   let holdallSSEq = [];
   const previous = () => {
-    if (buttonDisable === false) {
+    if (buttonDisable === false ) {
       let vardviewSeq = holdvar;
       setbuttonDisable(true);
 
@@ -28,8 +28,11 @@ export default function CaroselBox() {
         });
       };
 
+    
+
       findIndex();
-      if ((holdidx != 0) & (holdidx != carosel.length - 1)) {
+      if ((holdidx != 0) & (holdidx != carosel.length - 1)& holdvar[2]!=0) {
+
         const a2 = document.getElementById(`m${vardviewSeq[1]}`);
 
         const a3 = document.getElementById(`m${vardviewSeq[0]}`);
@@ -59,10 +62,10 @@ export default function CaroselBox() {
 
         a3.classList.remove("c2");
         a3.classList.remove("c3");
-        a3.classList.add("c2");
+       // a3.classList.add("c2");
         a3.classList.remove("reallleftcreate");
         a3.classList.remove("check");
-        a3.classList.add("c3");
+       // a3.classList.add("c3");
         a3.classList.add("box-move-left-to-main");
         a4.classList.add("check");
 
@@ -70,8 +73,8 @@ export default function CaroselBox() {
           a2.classList.remove("box-move-main-right");
           a2.classList.remove("c2");
           a2.classList.add("c1");
-          a2.classList.remove("box-move-left-to-main");
-          a2.classList.remove("c3");
+          a3.classList.remove("box-move-left-to-main");
+          a3.classList.remove("c3");
           a3.classList.add("c2");
           const idxnew = holdSeqall[holdidx - 1][0];
           const hold = document.getElementById(`m${idxnew}`);
@@ -94,7 +97,7 @@ export default function CaroselBox() {
         }, 1800);
       }
 
-      if (holdidx == 0) {
+      if (holdidx == 0 ) {
         const a2 = document.getElementById(`m${vardviewSeq[1]}`);
 
         const a3 = document.getElementById(`m${vardviewSeq[0]}`);
@@ -140,19 +143,98 @@ export default function CaroselBox() {
           a2.classList.add("c1");
 
           a3.classList.add("c2");
+          let it3 = [0, holdvar[0], holdvar[1]];
+          setvar(it3);
+          setbuttonDisable(false);
+
+        }, 1800);
+      }
+
+      if(holdvar[2]===0){
+ 
+      const a2 = document.getElementById(`m${vardviewSeq[1]}`);
+
+        const a3 = document.getElementById(`m${vardviewSeq[0]}`);
+        a2.classList.remove("box-move-real-left-main");
+
+        a2.classList.remove("box-move-real-left-left");
+        a2.classList.remove("box-move-main-right");
+        a2.classList.remove("box-move-left-to-main");
+        a2.classList.remove("box-move-main-right");
+        a2.classList.remove("box-move-left-to-main");
+
+        a2.classList.remove("c1");
+
+        a2.classList.remove("c2");
+        a2.classList.remove("c3");
+       // a2.classList.add("c2");
+        a2.classList.remove("reallleftcreate");
+        a2.classList.remove("check");
+        //a2.classList.add("c2");
+
+        a2.classList.add("box-move-main-right");
+
+        a3.classList.remove("box-move-real-left-main");
+
+        a3.classList.remove("box-move-real-left-left");
+        a3.classList.remove("box-move-main-right");
+        a3.classList.remove("box-move-left-to-main");
+        a3.classList.remove("box-move-main-right");
+        a3.classList.remove("box-move-left-to-main");
+        a3.classList.remove("c1");
+
+        a3.classList.remove("c2");
+        a3.classList.remove("c3");
+        //a3.classList.add("c2");
+        a3.classList.remove("reallleftcreate");
+        a3.classList.remove("check");
+        a3.classList.add("c3");
+
+        a3.classList.add("box-move-left-to-main");
+        setTimeout(() => {
+          a2.classList.remove("box-move-main-right");
+          a2.classList.remove("c2");
+          a2.classList.add("c1");
+          a2.classList.remove("box-move-left-to-main");
+          a2.classList.remove("box-move-real-left-main");
+          a3.classList.remove("box-move-left-to-main");
+          
+          a3.classList.remove("c3");
+          a3.classList.add("c2");
+          const idxnew = holdSeqall[holdSeqall.length - 1][0];
+          const hold = document.getElementById(`m${idxnew}`);
+          hold.classList.remove("removecard");
+          hold.classList.remove("box-move-real-left-main");
+
+          hold.classList.remove("box-move-real-left-left");
+          hold.classList.remove("box-move-main-right");
+          hold.classList.remove("box-move-left-to-main");
+          hold.classList.remove("c1");
+
+          hold.classList.remove("c2");
+          hold.classList.remove("c3");
+          hold.classList.remove("reallleftcreate");
+          hold.classList.remove("check");
+          hold.classList.add("c3");
+          let it3 = [idxnew, holdvar[0], holdvar[1]];
+          //alert(it3)
+          setvar(it3);
           setbuttonDisable(false);
         }, 1800);
+
       }
     }
   };
 
   const next = () => {
-    if (buttonDisable === false) {
+    if (buttonDisable === false ) {
       setbuttonDisable(true);
       const carosel = document.querySelectorAll(".carosel-view");
       let vardviewSeq = holdvar;
 
-      if (Math.max(...vardviewSeq) < carosel.length) {
+   
+
+      if (Math.max(...vardviewSeq) < carosel.length && holdvar[0] !==0) {
         console.log(vardviewSeq);
 
         const a2 = document.getElementById(`m${vardviewSeq[1]}`);
@@ -218,9 +300,10 @@ export default function CaroselBox() {
           }
         }, 1800);
       }
-
-      if (Math.max(...vardviewSeq) == carosel.length) {
+      //----------here -------------
+      if (Math.max(...vardviewSeq) == carosel.length && holdvar[2] !== 0)   {
         console.log(vardviewSeq);
+
 
         if (vardviewSeq[2] != 0) {
           const a2 = document.getElementById(`m${vardviewSeq[1]}`);
@@ -249,8 +332,80 @@ export default function CaroselBox() {
           a2.classList.add("box-move-real-left-main");
           a4.classList.add("check");
 
+          setvar( [holdvar[1], holdvar[2], 0])
+         // alert([holdvar[1], holdvar[2], 0])
+
           setbuttonDisable(false);
         }
+      }
+
+      if(holdvar[0]==0){
+      
+
+        const a2 = document.getElementById(`m${vardviewSeq[1]}`);
+        const a3 = document.getElementById(`m${vardviewSeq[2]}`);
+      
+
+        a2.classList.remove("box-move-real-left-main");
+
+        a2.classList.remove("box-move-real-left-left");
+
+        a2.classList.remove("c1");
+
+        a2.classList.remove("c2");
+        a2.classList.remove("c3");
+        a2.classList.add("c2");
+        a2.classList.remove("reallleftcreate");
+        a2.classList.remove("check");
+        a2.classList.remove("box-move-main-right");
+        a2.classList.remove("box-move-left-to-main");
+
+        a3.classList.remove("box-move-real-left-main");
+
+        a3.classList.remove("box-move-real-left-left");
+
+        a3.classList.remove("check");
+        a3.classList.remove("c1");
+        a3.classList.remove("box-move-main-right");
+        a3.classList.remove("box-move-left-to-main");
+
+        a3.classList.remove("c2");
+        a3.classList.remove("c3");
+        a3.classList.add("c1");
+
+        a2.classList.add("box-move-real-left-main");
+        a3.classList.add("box-move-real-left-left");
+
+        setTimeout(() => {
+          a2.classList.remove("box-move-main-right");
+          a2.classList.remove("c2");
+          a2.classList.add("c3");
+          a2.classList.remove("box-move-left-to-main");
+          a2.classList.remove("c3");
+
+          a3.classList.add("c2");
+          const idxnew = 1;
+          const hold = document.getElementById(`m${idxnew}`);
+          hold.classList.remove("removecard");
+          hold.classList.remove("box-move-real-left-main");
+
+          hold.classList.remove("box-move-real-left-left");
+          hold.classList.remove("box-move-main-right");
+          hold.classList.remove("box-move-left-to-main");
+          hold.classList.remove("c1");
+
+          hold.classList.remove("c2");
+          hold.classList.remove("c3");
+          hold.classList.remove("reallleftcreate");
+          hold.classList.remove("check");
+          hold.classList.add("c1");
+          let it3 = [ holdvar[1], holdvar[2],idxnew];
+   
+          setvar(it3);
+          setbuttonDisable(false);
+        }, 1800);
+
+
       }
 
       if (holdSeqall.length == 1) {
@@ -277,6 +432,9 @@ export default function CaroselBox() {
         console.log(holdallSSEq);
         console.log(holdSeqall);
       }
+
+      
+
     }
   };
   return (
@@ -325,11 +483,11 @@ export default function CaroselBox() {
           />
 
           <div className="leftBtn" onClick={previous}>
-            <img src={arrow} />
+            <img src={arrow}   className="ImageBtnCRs"/>
           </div>
 
           <div className="righttBtn" onClick={next}>
-            <img src={arrow} />
+            <img src={arrow}  className="ImageBtnCRs"/>
           </div>
         </div>
       </div>

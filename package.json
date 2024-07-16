@@ -1,10 +1,9 @@
 {
-  "name": "newportfolio",
+  "name": "testprotfo",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mediapipe/tasks-vision": "^0.10.14",
-    "@react-three/drei": "^9.108.3",
+    "@react-three/drei": "^9.108.4",
     "@react-three/fiber": "^8.16.8",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -38,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
